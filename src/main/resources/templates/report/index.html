@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org/">
+<head th:replace="fragments :: head"></head>
+
+<body class="container">
+
+<h1 th:text="${title}">Default Title</h1>
+
+<nav th:replace="fragments :: navigation"></nav>
+
+<p th:unless="${reports} and ${reports.size()}">no report :(</p>
+
+
+<table class="table">
+
+    <tr>
+        <th>Name</th>
+        <th>Bill Group</th>
+        <th>Time In</th>
+        <th>Time Out</th>
+        <th>Assigned</th>
+        <th>Completed</th>
+        <th>Skipped</th>
+        <th>Start Miles</th>
+        <th>End Miles</th>
+        <th>Probes</th>
+        <th>Probe Folder</th>
+        <th>Re-Reads</th>
+        <th>Comments</th>
+    </tr>
+
+    <tr th:each="report : ${reports}">
+        <td th:text="${report.name}"></td>
+        <td th:text="${report.billGroup}"></td>
+        <td th:text="${report.timeIn}"></td>
+        <td th:text="${report.timeOut}"></td>
+        <td th:text="${report.assigned}"></td>
+        <td th:text="${report.completed}"></td>
+        <td th:text="${report.skipped}"></td>
+        <td th:text="${report.startMiles}"></td>
+        <td th:text="${report.endMiles}"></td>
+        <td th:text="${report.probes}"></td>
+        <td th:text="${report.probeFolder}"></td>
+        <td th:text="${report.reReads}"></td>
+        <td th:text="${report.comments}"></td>
+    </tr>
+
+</table>
+<nav>
+    <a href="/report/add" class="btn btn-primary">Add</a>
+    <a href="/report/remove" class="btn btn-danger">Remove</a>
+</nav>
+
+</body>
+</html>

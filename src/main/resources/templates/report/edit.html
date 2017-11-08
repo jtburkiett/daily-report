@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org/">
+<head th:replace="fragments :: head"></head>
+<body class="container">
+<h1 th:text="${title}">Default Title</h1>
+
+<nav th:replace="fragments :: navigation"></nav>
+
+<form method="post" style="max-width:600px;" th:object="${report}">
+    <div class="form-group">
+        <label th:for="name">Name</label>
+        <input class="form-control" th:field="*{name}" />
+        <span th:errors="*{name}" class="error"></span>
+    </div>
+    <div class="form-group">
+        <label th:for="billGroup">Bill Group</label>
+        <input class="form-control" th:field="*{billGroup}" />
+        <span th:errors="*{billGroup}" class="error"></span>
+    </div>
+
+    <div class="form-group">
+        <label th:for="timeIn">Time In</label>
+        <input class="form-control" th:field="*{timeIn}" />
+        <span th:errors="*{timeIn}" class="error"></span>
+    </div>
+
+    <div class="form-group">
+        <label th:for="timeOut">Time Out</label>
+        <input class="form-control" th:field="*{timeOut}" />
+        <span th:errors="*{timeOut}" class="error"></span>
+    </div>
+
+    <div class="form-group">
+        <label th:for="assigned">Assigned</label>
+        <input class="form-control" th:field="*{assigned}" />
+        <span th:errors="*{assigned}" class="error"></span>
+    </div>
+
+    <div class="form-group">
+        <label th:for="completed">Completed</label>
+        <input class="form-control" th:field="*{completed}" />
+        <span th:errors="*{completed}" class="error"></span>
+    </div>
+
+    <div class="form-group">
+        <label th:for="skipped">Skipped</label>
+        <input class="form-control" th:field="*{skipped}" />
+        <span th:errors="*{skipped}" class="error"></span>
+    </div>
+
+    <div class="form-group">
+        <label th:for="startMiles">Starting Mileage</label>
+        <input class="form-control" th:field="*{startMiles}" />
+        <span th:errors="*{startMiles}" class="error"></span>
+    </div>
+
+    <div class="form-group">
+        <label th:for="endMiles">Ending Mileage</label>
+        <input class="form-control" th:field="*{endMiles}" />
+        <span th:errors="*{endMiles}" class="error"></span>
+    </div>
+
+    <div class="form-group">
+        <label th:for="probes">Probes</label>
+        <input class="form-control" th:field="*{probes}" />
+        <span th:errors="*{probes}" class="error"></span>
+    </div>
+
+    <div class="form-group">
+        <label th:for="probeFolder">Probe Folder</label>
+        <input class="form-control" th:field="*{probeFolder}" />
+        <span th:errors="*{probeFolder}" class="error"></span>
+    </div>
+
+    <div class="form-group">
+        <label th:for="reReads">Re-Reads</label>
+        <input class="form-control" th:field="*{reReads}" />
+        <span th:errors="*{reReads}" class="error"></span>
+    </div>
+
+    <div class="form-group">
+        <label th:for="comments">Additional Comments</label>
+        <input class="form-control" th:field="*{comments}" />
+        <span th:errors="*{comments}" class="error"></span>
+    </div>
+
+
+    <input type="hidden" th:value="${report.reportId}" name="reportId">
+    <input type="submit" value="Add Cheese" />
+</form>
+
+</body>
+</html>

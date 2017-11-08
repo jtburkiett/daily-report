@@ -4,9 +4,9 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class CheeseMvcApplication {
+public class ReportMvcApplication {
 
 	public static void main(String[] args) {
-		SpringApplication.run(CheeseMvcApplication.class, args);
+		SpringApplication.run(ReportMvcApplication.class, args);
 	}
 }

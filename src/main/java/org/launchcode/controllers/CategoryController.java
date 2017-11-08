@@ -39,14 +39,14 @@ public class CategoryController {
 
     @RequestMapping(value = "add", method = RequestMethod.POST)
     public String processAddCategories(Model model, @ModelAttribute @Valid Category category, Errors errors){
-        if(errors.hasErrors()) {
-            model.addAttribute("title", "Add Category");
-            model.addAttribute(new Error());
-            model.addAttribute("cheeseTypes", categoryDao.findAll());
-            return "category/add";
+        if(!errors.hasErrors()) {
+            categoryDao.save(category);
+            return "redirect:";
         }
-        categoryDao.save(category);
-        return "redirect:";
+        model.addAttribute("title", "Add Category");
+        model.addAttribute(new Error());
+        model.addAttribute("cheeseTypes", categoryDao.findAll());
+        return "category/add";
     }
 }
 
