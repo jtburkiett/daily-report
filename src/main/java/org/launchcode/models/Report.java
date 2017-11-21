@@ -54,7 +54,7 @@ public class Report {
 
     private String comments;
 
-    public Report(String name, String billGroup, LocalTime timeIn, LocalTime timeOut, String assigned, String completed, String skipped, int startMiles, int endMiles, int probes, String probeFolder, int reReads, String comments) {
+    public Report(String name, String billGroup, String timeIn, String timeOut, String assigned, String completed, String skipped, int startMiles, int endMiles, int probes, String probeFolder, int reReads, String comments) {
         this.name = name;
         this.billGroup = billGroup;
         this.timeIn = timeIn;
@@ -88,19 +88,19 @@ public class Report {
         this.billGroup = billGroup;
     }
 
-    public LocalTime getTimeIn() {
+    public String getTimeIn() {
         return timeIn;
     }
 
-    public void setTimeIn(LocalTime timeIn) {
+    public void setTimeIn(String timeIn) {
         this.timeIn = timeIn;
     }
 
-    public LocalTime getTimeOut() {
+    public String getTimeOut() {
         return timeOut;
     }
 
-    public void setTimeOut(LocalTime timeOut) {
+    public void setTimeOut(String timeOut) {
         this.timeOut = timeOut;
     }
 
