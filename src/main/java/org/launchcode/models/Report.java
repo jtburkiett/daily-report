@@ -32,9 +32,9 @@ public class Report {
 
     private String billGroup;
 
-    private LocalTime timeIn;
+    private String timeIn;
 
-    private LocalTime timeOut;
+    private String timeOut;
 
     private String assigned;
 
